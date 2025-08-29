@@ -154,8 +154,3 @@ streamlit run app.py
 * [Kaggle Toxic Comment Classification Challenge](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge)
 * Hugging Face Transformers
 * TensorFlow & Scikit-learn
-
----
-
-Would you like me to also make a **shorter "recruiter-friendly" README summary** (1-page style) in addition to this detailed one, so you can showcase it better on GitHub?
-
