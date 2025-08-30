@@ -7,3 +7,5 @@ streamlit==1.49.0
 transformers>=4.45.0
 datasets==3.0.1
 accelerate==0.34.2
+matplotlib==3.9.2
+seaborn==0.13.2
