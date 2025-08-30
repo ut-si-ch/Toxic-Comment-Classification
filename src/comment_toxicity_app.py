@@ -10,7 +10,7 @@ from sklearn.metrics import multilabel_confusion_matrix
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 # Paths
-# tokenizer_path = "saved_models/"
+tokenizer_path = "src/tokenizer.pkl"
 model_path = "saved_models/bigru.h5"
 
 # Google Drive file ID (from your shared link)
@@ -18,7 +18,7 @@ gdrive_id = "1D3K647VnDsN7XjoeBBFHGaGDrAbbOu0h"
 gdrive_url = f"https://drive.google.com/uc?id={gdrive_id}"
 
 # Make sure the directory exists
-os.makedirs("saved_models", exist_ok=True)
+os.makedirs(tokenizer_path, exist_ok=True)
 
 # Load tokenizer
 with open("tokenizer.pkl", "rb") as f:
@@ -145,6 +145,7 @@ with tab3:
         verdict = classify_comment(scores)
         st.write(f"**Predicted Labels**: {verdict}")
         st.bar_chart(scores)
+
 
 
 
