@@ -17,8 +17,9 @@ model_path = "saved_models/bigru.h5"
 gdrive_id = "1D3K647VnDsN7XjoeBBFHGaGDrAbbOu0h"
 gdrive_url = f"https://drive.google.com/uc?id={gdrive_id}"
 
-# Make sure the directory exists
-os.makedirs(tokenizer_path, exist_ok=True)
+# Ensure directories exist
+os.makedirs(os.path.dirname(tokenizer_path), exist_ok=True)
+os.makedirs(os.path.dirname(model_path), exist_ok=True)
 
 # Load tokenizer
 with open("tokenizer.pkl", "rb") as f:
@@ -32,6 +33,7 @@ if not os.path.exists(model_path):
 # Load model
 model = load_model(model_path)
 print("Model loaded successfully!")
+
 LABELS = ['toxic', 'severe_toxic', 'obscene', 'threat', 'insult', 'identity_hate']
 MAX_LEN = 128  # used during training
 
@@ -145,6 +147,7 @@ with tab3:
         verdict = classify_comment(scores)
         st.write(f"**Predicted Labels**: {verdict}")
         st.bar_chart(scores)
+
 
 
 
