@@ -8,13 +8,29 @@ import seaborn as sns
 from sklearn.metrics import multilabel_confusion_matrix
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
-# Load tokenizer and model
-import pickle
-with open("saved_models/tokenizer.pkl", "rb") as f:
+# Paths
+tokenizer_path = "saved_models/tokenizer.pkl"
+model_path = "saved_models/bigru.h5"
+
+# Google Drive file ID (from your shared link)
+gdrive_id = "1D3K647VnDsN7XjoeBBFHGaGDrAbbOu0h"
+gdrive_url = f"https://drive.google.com/uc?id={gdrive_id}"
+
+# Make sure the directory exists
+os.makedirs("saved_models", exist_ok=True)
+
+# Load tokenizer
+with open(tokenizer_path, "rb") as f:
     tokenizer = pickle.load(f)
 
-model = load_model("saved_models/bigru.h5")
+# Download model if not present
+if not os.path.exists(model_path):
+    print("Downloading model from Google Drive...")
+    gdown.download(gdrive_url, model_path, quiet=False)
 
+# Load model
+model = load_model(model_path)
+print("Model loaded successfully!")
 LABELS = ['toxic', 'severe_toxic', 'obscene', 'threat', 'insult', 'identity_hate']
 MAX_LEN = 128  # used during training
 
@@ -128,3 +144,4 @@ with tab3:
         verdict = classify_comment(scores)
         st.write(f"**Predicted Labels**: {verdict}")
         st.bar_chart(scores)
+
