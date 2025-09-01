@@ -62,12 +62,10 @@ It is a multi-label text classification problem — a comment may belong to more
 ---
 
 ## Demo Preview – Streamlit Web Preview
-
-###  Single Comment Preview
-<img src="https://github.com/user-attachments/assets/46574a54-1eac-4b7a-9c92-7d9a04666204" alt="Single Comment Screenshot" width="700" height="747">
-
-###  Bulk CSV Upload
-<img src="https://github.com/user-attachments/assets/14ae0c0b-e0ac-4c81-907f-aa45cd1e1ad8" alt="Bulk CSV Screenshot" width="688" height="737">
+<p align='center'>
+<img src="https://github.com/user-attachments/assets/46574a54-1eac-4b7a-9c92-7d9a04666204" alt="Single Comment Preview" width="45%" height="500"/>
+<img src="https://github.com/user-attachments/assets/14ae0c0b-e0ac-4c81-907f-aa45cd1e1ad8" alt="Bulk CSV Upload" width="45%" height="500"/>
+</p>
 
 ## Demo Video – Streamlit App Walkthrough
 
