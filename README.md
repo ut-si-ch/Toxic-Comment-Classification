@@ -67,7 +67,7 @@ It is a multi-label text classification problem — a comment may belong to more
 )
 ![Bulk CSV Upload](<img width="688" height="737" alt="bulk_csv_comment_ss" src="https://github.com/user-attachments/assets/14ae0c0b-e0ac-4c81-907f-aa45cd1e1ad8" />
 )
-![Entire Web App View](<img width="1883" height="876" alt="image" src="https://github.com/user-attachments/assets/0798efbd-c90e-4790-8c81-7c39a867922f" />)
+![Entire Web App View](https://drive.google.com/file/d/1dvzBUgoyh_4qZaXyaw8sBvU67uuGZDtB/view?usp=sharing)
 
 ---
 
