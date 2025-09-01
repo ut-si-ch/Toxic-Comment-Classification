@@ -34,19 +34,19 @@ The project compares performance across models, addresses class imbalance, and d
 
 ---
 
-## 🔍 Problem Statement
+## Problem Statement
 
 Online platforms struggle to moderate toxic content. This project builds a multi-label classification system to detect toxic, obscene, threatening, and hateful comments using classical ML, deep learning, and transformer-based models.
 
 ---
 
-## 💼 Business Use Case
+## Business Use Case
 
 Helps platforms like forums, social media, and comment sections automatically flag harmful content, improving user safety and experience.
 
 ---
 
-## 📖 Overview
+##  Overview
 
 This project focuses on detecting toxic language in online comments. The dataset contains user comments labeled into multiple categories of toxicity:
 
@@ -61,13 +61,13 @@ It is a multi-label text classification problem — a comment may belong to more
 
 ---
 
-## 🖼️ Demo Preview
+##  Demo Preview
 
 ![App Screenshot](https://your-image-hosting.com/app-preview.png)
 
 ---
 
-## 🎯 Objectives
+## Objectives
 
 - Preprocess text (cleaning, tokenization, stopword removal)
 - Apply TF-IDF vectorization for baseline models
@@ -78,7 +78,7 @@ It is a multi-label text classification problem — a comment may belong to more
 
 ---
 
-## 📊 Dataset
+## Dataset
 
 - Source: [Jigsaw Toxic Comment Classification Challenge](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge)
 - Train size: ~160k comments
@@ -87,7 +87,7 @@ It is a multi-label text classification problem — a comment may belong to more
 
 ---
 
-## 🧹 Data Preprocessing
+##  Data Preprocessing
 
 1. Text Cleaning:
    - Lowercasing
@@ -99,29 +99,29 @@ It is a multi-label text classification problem — a comment may belong to more
 
 ---
 
-## 🧪 Models
+##  Models
 
-### 🔹 Baseline (TF-IDF + Classical ML)
+###  Baseline (TF-IDF + Classical ML)
 
 - Logistic Regression (One-vs-Rest)
 - Linear SVM (One-vs-Rest)
 - Multinomial Naive Bayes
 
-### 🔹 Deep Learning Models
+###  Deep Learning Models
 
 - BiLSTM (captures long-range sequential dependencies)
 - BiGRU (lightweight alternative to LSTM)
 - TextCNN (captures local n-gram patterns)
 
-### 🔹 Transformers
+###  Transformers
 
 - DistilBERT Fine-Tuning (contextual embeddings, best for nuanced toxic patterns)
 
 ---
 
-## 📈 Results
+##  Results
 
-### ✅ Baseline Models
+###  Baseline Models
 
 | Model                   | Accuracy | Macro Precision | Macro Recall | Macro F1 |
 |------------------------|----------|-----------------|--------------|----------|
@@ -129,20 +129,20 @@ It is a multi-label text classification problem — a comment may belong to more
 | Linear SVM              | 93.1%    | 0.86            | 0.55         | 0.66     |
 | Multinomial Naive Bayes | 91.4%    | 0.63            | 0.31         | 0.41     |
 
-### 🔍 Deep Learning Highlights
+### Deep Learning Highlights
 
 - BiLSTM: Strong on frequent labels (toxic, obscene, insult), weaker on rare ones
 - TextCNN: Improved recall for minority labels like `threat`
 - BiGRU: Balanced performance with faster training
 
-### 🧠 Transformer (DistilBERT)
+### Transformer (DistilBERT)
 
 - Outperformed classical and RNN/CNN models
 - Best macro F1 across all categories
 
 ---
 
-## ⚙️ Installation & Usage
+##  Installation & Usage
 
 ### Environment Setup
 
@@ -170,7 +170,7 @@ streamlit run app.py
 
 ---
 
-## 🧠 Key Learnings
+## Key Learnings
 
 - Classical ML (TF-IDF + SVM) provides strong baselines
 - Deep models (BiLSTM, GRU, CNN) learn semantic and sequential patterns
@@ -179,7 +179,7 @@ streamlit run app.py
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 ├── data/                  # Dataset (not included, add Kaggle link)
@@ -193,7 +193,7 @@ streamlit run app.py
 
 ---
 
-## 📬 Connect With Me
+## Connect With Me
 
 - [LinkedIn](https://www.linkedin.com/in/uttam-singh-chaudhary-98408214b)
 - [Portfolio](https://datascienceportfol.io/uttamsinghchaudhary)
@@ -201,7 +201,7 @@ streamlit run app.py
 
 ---
 
-## 🙏 Acknowledgements
+## Acknowledgements
 
 - [Kaggle Toxic Comment Classification Challenge](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge)
 - Hugging Face Transformers
