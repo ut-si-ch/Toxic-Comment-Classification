@@ -4,19 +4,19 @@
 ![Streamlit](https://img.shields.io/badge/Streamlit-Deployed-green)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
-# 🧠 Toxic Comment Classification
+#  Toxic Comment Classification
 
 A multi-label text classification system to detect toxic, obscene, insulting, and hateful comments using:
 
-- ✅ TF-IDF with ML models (Logistic Regression, SVM, Naive Bayes)
-- 🧠 Deep learning architectures (BiLSTM, BiGRU, TextCNN)
-- 🤖 Transformers (DistilBERT)
+-  TF-IDF with ML models (Logistic Regression, SVM, Naive Bayes)
+-  Deep learning architectures (BiLSTM, BiGRU, TextCNN)
+-  Transformers (DistilBERT)
 
 The project compares performance across models, addresses class imbalance, and deploys results in a Streamlit app.
 
 ---
 
-## 📚 Table of Contents
+## Table of Contents
 
 - [Problem Statement](#problem-statement)
 - [Business Use Case](#business-use-case)
