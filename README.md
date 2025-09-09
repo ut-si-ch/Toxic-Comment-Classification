@@ -189,7 +189,7 @@ streamlit run app.py
 ## Project Structure
 
 ```
-├── data/                  # Dataset (not included, add Kaggle link)
+├── data/                  # Dataset
 ├── notebooks/             # Jupyter notebooks
 ├── saved_models/          # Trained models
 ├── app.py                 # Streamlit deployment script
