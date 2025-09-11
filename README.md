@@ -136,18 +136,34 @@ It is a multi-label text classification problem — a comment may belong to more
 | Linear SVM              | 93.1%    | 0.86            | 0.55         | 0.66     |
 | Multinomial Naive Bayes | 91.4%    | 0.63            | 0.31         | 0.41     |
 
-### Deep Learning Highlights
+### Deep Learning Models (Tokenized Sequences)
 
-- BiLSTM: Strong on frequent labels (toxic, obscene, insult), weaker on rare ones
-- TextCNN: Improved recall for minority labels like `threat`
-- BiGRU: Balanced performance with faster training
+- BiLSTM
+   - Precision: strong on frequent labels (toxic: 0.85, obscene: 0.77).
+   - Weak on minority labels (threat, identity_hate → near zero recall).
+   - Macro F1 ≈ 0.45.
+   - Captured sequential dependencies, but biased toward frequent classes.
 
-### Transformer (DistilBERT)
+- TextCNN
+   - High recall for rare labels (threat recall ≈ 0.70), but precision dropped.
+   - Overall Macro F1 ≈ 0.47.
+   -  Efficient and recall-focused, but many false positives.
 
-- Outperformed classical and RNN/CNN models
-- Best macro F1 across all categories
-
+- BiGRU
+   - Balanced performance across frequent + rare labels.
+   - Macro F1 ≈ 0.57 (highest among RNN/CNN).
+   - Faster to train than BiLSTM, better recall than TextCNN, strong compromise model.
+   
 ---
+### Final Choice: BiGRU for Deployment
+
+BiGRU chosen as the deployed model because it offers:
+- Best trade-off → balanced precision & recall across all labels.
+- Lightweight → faster training/inference compared to BERT.
+- Deployment-friendly on limited resources (Streamlit + CPU).
+
+### Future Scope:
+DistilBERT or larger transformers can replace BiGRU when scaling to more powerful hardware or production pipelines.
 
 ##  Installation & Usage
 
@@ -181,7 +197,7 @@ streamlit run app.py
 
 - Classical ML (TF-IDF + SVM) provides strong baselines
 - Deep models (BiLSTM, GRU, CNN) learn semantic and sequential patterns
-- Transformers (DistilBERT) capture context & nuance best, especially for rare labels
+- Transformers (DistilBERT) capture context & nuance best, especially for rare labels so it can be tried 
 - Class imbalance significantly impacts minority label detection (handled with sample weighting / focal loss)
 
 ---
