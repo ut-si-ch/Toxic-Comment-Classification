@@ -27,6 +27,7 @@ The project compares performance across models, addresses class imbalance, and d
 - [Data Preprocessing](#data-preprocessing)
 - [Models](#models)
 - [Results](#results)
+- [Conclusion](#conclusion)
 - [Installation & Usage](#installation--usage)
 - [Key Learnings](#key-learnings)
 - [Project Structure](#project-structure)
@@ -153,17 +154,24 @@ It is a multi-label text classification problem — a comment may belong to more
    - Balanced performance across frequent + rare labels.
    - Macro F1 ≈ 0.57 (highest among RNN/CNN).
    - Faster to train than BiLSTM, better recall than TextCNN, strong compromise model.
+
+- Transformer (DistilBERT Fine-tuning)
+   - Achieved F1-micro ≈ 0.777 and F1-macro ≈ 0.620 after 3 epochs.
+   - Outperformed all classical ML and RNN/CNN models on macro F1, showing stronger handling of minority classes.
+   - Trade-off: Higher compute cost and slower inference vs BiGRU.
    
 ---
+## Conclusion
 ### Final Choice: BiGRU for Deployment
 
 BiGRU chosen as the deployed model because it offers:
 - Best trade-off → balanced precision & recall across all labels.
 - Lightweight → faster training/inference compared to BERT.
 - Deployment-friendly on limited resources (Streamlit + CPU).
+- DistilBERT is retained as a research/secondary model for future scaling, since it provides the best overall macro performance and captures long-range dependencies better.
 
 ### Future Scope:
-DistilBERT or larger transformers can replace BiGRU when scaling to more powerful hardware or production pipelines.
+DistilBERT or larger transformers can replace BiGRU when scaling to more powerful hardware or production pipelines.Also, explore ONNX/quantization to optimize DistilBERT for production or use a cascade approach (BiGRU fast path, DistilBERT fallback on low-confidence cases).
 
 ##  Installation & Usage
 
